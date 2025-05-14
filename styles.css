@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto+Mono:wght@400&display=swap');
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background: linear-gradient(120deg, #001f3f, #003d73, #004080); /* Inicial */
+    color: #00ff00;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    transition: background 5s ease-in-out;
+}
+
+/* Animación de fondo dinámico */
+@keyframes fondoDinamico {
+    0% {background: linear-gradient(120deg, #001f3f, #003d73, #004080);}
+    50% {background: linear-gradient(120deg, #003d73, #004080, #0055a4);}
+    100% {background: linear-gradient(120deg, #004080, #0055a4, #0077cc);}
+}
+body {
+    animation: fondoDinamico 10s infinite alternate;
+}
+
+/* Menú de navegación */
+nav {
+    background: #222;
+    padding: 10px 0;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+nav ul li {
+    margin: 0 15px;
+}
+nav ul li a {
+    color: #00ff00;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+nav ul li a:hover {
+    color: #ff0000;
+}
+
+/* Portada con fondo y efecto */
+#portada {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    background: url('matrix-code.gif') no-repeat center center/cover;
+}
+#portada img {
+    width: 150px; /* Tamaño restaurado */
+    height: auto;
+    filter: brightness(80%);
+}
+h1 {
+    font-size: 50px;
+    color: #00ff00;
+    text-shadow: 0 0 20px #00ff00;
+    animation: glitch 1.5s infinite alternate;
+}
+@keyframes glitch {
+    0% {text-shadow: 0 0 10px #00ff00;}
+    100% {text-shadow: 0 0 20px #ff0000;}
+}
+
+/* Botones con efecto hacker */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px #00ff00;
+    background: rgba(0, 0, 0, 0.8);
+}
+.btn:hover {
+    background: #00ff00;
+    color: #0a0a0a;
+    box-shadow: 0 0 20px #00ff00;
+}
+
+/* Terminal Hacker */
+#terminal {
+    width: 80%;
+    margin: 40px auto;
+    background: #111;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+.terminal-container {
+    background: black;
+    padding: 15px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    color: #00ff00;
+}
+#output {
+    height: 200px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+#terminalInput {
+    width: 100%;
+    padding: 10px;
+    background: black;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Fondo con lluvia de binarios */
+#binaryCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}

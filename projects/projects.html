@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos | Portafolio</title>
+    <link rel="stylesheet" href="styles-projects.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../about/about.html">Sobre mí</a></li>
+            <li><a href="../proyects/projects.html">Proyectos</a></li>
+            <li><a href="../trucos-tecnicos/trucostecnicos.html">Trucos Tecnicos</a></li>
+        </ul>
+    </nav>
+
+    <section id="proyectos">
+        <h2>🚀 Mis Proyectos Profesionales</h2>
+        <p>Actualmente desarrollo un proyecto educativo de gran importancia a través de YouTube, con el objetivo de impulsar mi crecimiento profesional y brindar conocimiento sobre seguridad informática. En mi canal, analizo en profundidad los distintos métodos de ataque utilizados por ciberdelincuentes, proporcionando información valiosa para fortalecer la protección de datos y mejorar la seguridad digital. Mi misión es compartir estrategias y herramientas clave que ayuden a los usuarios y empresas a defenderse de amenazas en el mundo cibernético.</p>
+
+        <h3>🎬 Destacando Mi Canal de YouTube</h3>
+        <p>En mi canal encontrarás una variedad de temas relacionados con la ciberseguridad, incluyendo Hacking web, Criptografía, backdoors entre otros. Aquí te comparto algunos videos clave:</p>
+
+        <!-- Galería de videos destacados -->
+        <div class="video-grid">
+            <div class="video-item" onclick="abrirVideo('T8blYqwyLyQ')">
+                <img src="https://img.youtube.com/vi/T8blYqwyLyQ/0.jpg" alt="Video 1">
+                <h3>🔒 Seguridad Informática Avanzada</h3>
+                <p>Criptografía avanzada  y técnicas de defensa.</p>
+            </div>
+
+            <div class="video-item" onclick="abrirVideo('BshVSiqUib4')">
+                <img src="https://img.youtube.com/vi/BshVSiqUib4/0.jpg" alt="Video 2">
+                <h3>💻 Pentesting y Hacking Web</h3>
+                <p>Laboratorios y Guías para hacking web.</p>
+            </div>
+
+            <div class="video-item" onclick="abrirVideo('P_3ghWtHsRA')">
+                <img src="https://img.youtube.com/vi/P_3ghWtHsRA/0.jpg" alt="Video 3">
+                <h3>🛡️ Análisis Forense Digital</h3>
+                <p>Acceder a un equipo de investigación y recopilar evidencia.</p>
+            </div>
+
+            <div class="video-item" onclick="abrirVideo('DPu-KoDx1sk')">
+                <img src="https://img.youtube.com/vi/DPu-KoDx1sk/0.jpg" alt="Video 4">
+                <h3>📡 Phishing e ingeniería social</h3>
+                <p>Estrategias y métodos de manipulación.</p>
+            </div>
+        </div>
+
+        <p>Visita mi canal para más contenido exclusivo:  
+        <a href="https://www.youtube.com/channel/UCw04B_rmssEPCqLjY0929mQ" target="_blank">🔗 Ir a mi canal</a></p>
+    </section>
+
+    <script>
+        function abrirVideo(videoId) {
+            window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
+        }
+    </script>
+
+</body>
+</html>

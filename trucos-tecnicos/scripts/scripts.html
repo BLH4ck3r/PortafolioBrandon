@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scripts de Ciberseguridad</title>
+    <link rel="stylesheet" href="styles_scripts.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="../../../index.html">Inicio</a></li>
+            <li><a href="../../../about/about.html">Sobre Mí</a></li>
+            <li><a href="../../../projects/projects.html">Proyectos</a></li>
+            <li><a href="scripts.html">Scripts Técnicos</a></li>
+        </ul>
+    </nav>
+
+    <section id="scripts">
+        <h1>📜 Scripts Técnicos en Ciberseguridad</h1>
+        <p>Explora scripts organizados por categoría para mejorar la seguridad y el análisis de sistemas.</p>
+
+        <button class="btn" onclick="toggleSection('redes')">🔍 Scripts de Redes</button>
+        <div id="redes" class="categoria">
+            <h2>🔹 Monitoreo de tráfico</h2>
+            <p>Aquí puedes agregar scripts relacionados con análisis de redes.</p>
+            <pre>
+                <!-- Agrega tu código aquí -->
+            </pre>
+            <a href="https://github.com/TU_USUARIO/redes" class="btn">Ver código en GitHub</a>
+        </div>
+
+        <button class="btn" onclick="toggleSection('hacking')">🔒 Scripts de Hacking Ético</button>
+        <div id="hacking" class="categoria">
+            <h2>🛠 Fuerza Bruta en Login</h2>
+            <p>Aquí puedes agregar scripts relacionados con hacking ético.</p>
+            <pre>
+                <!-- Agrega tu código aquí -->
+            </pre>
+            <a href="https://github.com/TU_USUARIO/hacking" class="btn">Ver código en GitHub</a>
+        </div>
+
+        <button class="btn" onclick="toggleSection('automatizacion')">⚙️ Scripts de Automatización</button>
+        <div id="automatizacion" class="categoria">
+            <h2>🤖 Automatización de tareas</h2>
+            <p>Aquí puedes agregar scripts relacionados con automatización.</p>
+            <pre>
+                <!-- Agrega tu código aquí -->
+            </pre>
+            <a href="https://github.com/TU_USUARIO/automatizacion" class="btn">Ver código en GitHub</a>
+        </div>
+
+    </section>
+
+    <script>
+        function toggleSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            section.style.display = section.style.display === "none" ? "block" : "none";
+        }
+    </script>
+
+</body>
+</html>

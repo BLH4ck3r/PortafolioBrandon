@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto+Mono:wght@400&display=swap');
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background: linear-gradient(120deg, #0a0a0a, #002b5e, #001f3f);
+    color: #00ffcc;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menú de navegación */
+nav {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px 0;
+    width: 100%;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+}
+nav ul li {
+    margin: 0 20px;
+}
+nav ul li a {
+    color: #00ffcc;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 10px;
+}
+nav ul li a:hover {
+    color: #ff007f;
+}
+
+/* Sección principal */
+#scripts {
+    width: 85%;
+    margin: 60px auto;
+    text-align: center;
+}
+h1 {
+    font-size: 28px;
+    color: #00ffcc;
+}
+p {
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Botones de categorías */
+.btn {
+    display: block;
+    width: 90%;
+    max-width: 450px;
+    margin: 20px auto;
+    padding: 14px;
+    font-size: 20px;
+    background: rgba(10, 10, 10, 0.9);
+    color: #00ffcc;
+    border: 2px solid #00ffcc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+.btn:hover {
+    background: #00ffcc;
+    color: black;
+}
+
+/* Contenedor de categorías */
+.categoria {
+    display: none;
+    background: rgba(10, 10, 10, 0.8);
+    padding: 25px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* Código */
+.codigo {
+    background: #111;
+    padding: 15px;
+    color: #00ff00;
+    font-family: monospace;
+    border-radius: 8px;
+    overflow-x: auto;
+    max-width: 90%;
+    margin: auto;
+}
+
+/* Ajuste responsivo */
+@media (max-width: 768px) {
+    #scripts {
+        width: 95%;
+    }
+
+    .btn {
+        width: 95%;
+        font-size: 18px;
+    }
+
+    .categoria {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .codigo {
+        width: 100%;
+        padding: 12px;
+    }
+}

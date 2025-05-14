@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto+Mono:wght@400&display=swap');
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background: linear-gradient(120deg, #0a0a0a, #002b5e, #001f3f);
+    color: #00ffcc;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menú de navegación */
+nav {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px 0;
+    width: 100%;
+    box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.5);
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+}
+nav ul li {
+    margin: 0 20px;
+}
+nav ul li a {
+    color: #00ffcc;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 10px;
+}
+nav ul li a:hover {
+    color: #ff007f;
+}
+
+/* Sección de contenido */
+#contenido {
+    width: 80%;
+    margin: 60px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Foto */
+.foto-container {
+    text-align: center;
+    width: 40%;
+}
+.foto-container img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 4px solid #00ffcc;
+    box-shadow: 0 0 20px #00ffcc;
+}
+.foto-container h2 {
+    font-size: 22px;
+    color: #00ffcc;
+    margin-top: 10px;
+}
+
+/* Texto */
+.texto-container {
+    max-width: 600px;
+    width: 60%;
+}
+
+/* Secciones */
+.perfil h2 {
+    font-size: 24px;
+    color: #00ffcc;
+}
+.perfil p {
+    font-size: 18px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* Redes Sociales */
+#redes {
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    margin-top: 40px;
+}
+#redes h2 {
+    font-size: 22px;
+    color: #00ffcc;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.social-icons a img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+.social-icons a img:hover {
+    transform: scale(1.2);
+    filter: brightness(150%);
+}
+
+/* Ajustes responsivos para móviles */
+@media (max-width: 768px) {
+    /* Ajuste de la barra de navegación en móviles */
+    nav {
+        width: 100%;
+        box-shadow: 0px 6px 15px rgba(0, 255, 0, 0.7);
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 0;
+        width: 100%;
+    }
+    nav ul li {
+        margin: 12px 0;
+        width: 100%;
+        text-align: center;
+    }
+    nav ul li a {
+        font-size: 20px;
+        padding: 12px;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Ajuste de contenido en móviles */
+    #contenido {
+        flex-direction: column; /* Disposición vertical */
+        width: 100%;
+        padding: 20px;
+    }
+
+    .foto-container {
+        width: 100%; /* Foto centrada */
+    }
+    .foto-container img {
+        width: 180px;
+        height: 180px;
+    }
+    .foto-container h2 {
+        font-size: 20px;
+    }
+
+    .texto-container {
+        width: 100%;
+        padding: 15px;
+        background: transparent; /* Elimina la tarjeta en móviles */
+        box-shadow: none;
+    }
+
+    .perfil h2 {
+        font-size: 22px;
+    }
+
+    .perfil p {
+        font-size: 16px;
+    }
+
+    .social-icons {
+        flex-wrap: wrap; /* Mejor distribución */
+    }
+}
+

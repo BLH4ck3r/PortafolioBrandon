@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto+Mono:wght@400&display=swap');
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background: linear-gradient(120deg, #001f3f, #003d73, #004080);
+    color: #00ff00;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menú de navegación */
+nav {
+    background: #222;
+    padding: 15px 0;
+    width: 100%;
+    box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.5); /* Sombra uniforme */
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+}
+nav ul li {
+    margin: 10px;
+}
+nav ul li a {
+    color: #00ff00;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+nav ul li a:hover {
+    color: #ff0000;
+}
+
+/* Sección de proyectos */
+#proyectos {
+    margin: 50px auto;
+    padding: 30px;
+    width: 85%;
+    max-width: 900px;
+    background: rgba(10, 10, 10, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 0 18px rgba(0, 255, 255, 0.5);
+}
+
+/* Grid de videos espacioso */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajuste automático */
+    gap: 25px;
+    margin: 40px auto;
+}
+
+/* Contenedor individual de cada video */
+.video-item {
+    cursor: pointer;
+    padding: 20px;
+    background: rgba(10, 10, 10, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 0 18px rgba(0, 255, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.video-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 22px rgba(0, 255, 0, 0.8);
+}
+.video-item img {
+    width: 100%;
+    border-radius: 10px;
+    filter: brightness(92%);
+}
+.video-item h3 {
+    font-size: 22px;
+    color: #00ff00;
+    text-shadow: 0 0 12px #00ff00;
+}
+.video-item p {
+    font-size: 17px;
+    color: #fff;
+}
+
+/* Ajustes responsivos para móviles */
+@media (max-width: 768px) {
+    /* Ajuste de la barra de navegación en móviles */
+    nav {
+        width: 100%;
+        box-shadow: 0px 6px 15px rgba(0, 255, 0, 0.7); /* Sombra más fuerte en móviles */
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 0;
+        width: 100%;
+    }
+    nav ul li {
+        margin: 12px 0;
+        width: 100%;
+        text-align: center;
+    }
+    nav ul li a {
+        font-size: 20px;
+        padding: 12px;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Ajustes en la sección de proyectos */
+    #proyectos {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .video-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .video-item h3 {
+        font-size: 20px;
+    }
+
+    .video-item p {
+        font-size: 15px;
+    }
+
+    .video-item img {
+        filter: brightness(100%);
+    }
+}

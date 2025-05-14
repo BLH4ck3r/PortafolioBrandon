@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto+Mono:wght@400&display=swap');
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background: linear-gradient(120deg, #0a0a0a, #002b5e, #001f3f);
+    color: #00ffcc;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menú de navegación */
+nav {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px 0;
+    width: 100%;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+}
+nav ul li {
+    margin: 0 20px;
+}
+nav ul li a {
+    color: #00ffcc;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 10px;
+}
+nav ul li a:hover {
+    color: #ff007f;
+}
+
+/* Sección principal */
+#hacking {
+    width: 85%;
+    margin: 60px auto;
+    text-align: center;
+}
+h1 {
+    font-size: 28px;
+    color: #ff007f;
+}
+p {
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Publicaciones */
+.publicacion {
+    background: rgba(10, 10, 10, 0.8);
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.5);
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: left;
+}
+.publicacion h2 {
+    color: #00ffcc;
+    font-size: 24px;
+}
+.publicacion p {
+    font-size: 16px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* Código */
+.codigo {
+    background: #111;
+    padding: 15px;
+    color: #00ff00;
+    font-family: monospace;
+    border-radius: 8px;
+    overflow-x: auto;
+    max-width: 90%;
+    margin: auto;
+}
+
+/* Botón de regreso */
+.regresar {
+    display: block;
+    width: 90%;
+    max-width: 450px;
+    margin: 30px auto;
+    padding: 12px;
+    font-size: 20px;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    border: 2px solid #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.regresar:hover {
+    background: #ff007f;
+    color: black;
+}
+
+/* Ajuste responsivo */
+@media (max-width: 768px) {
+    #hacking {
+        width: 95%;
+    }
+
+    .publicacion {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .codigo {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .regresar {
+        width: 95%;
+        font-size: 18px;
+    }
+}
