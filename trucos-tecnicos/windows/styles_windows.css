@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto+Mono:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap');
 
 body {
-    font-family: 'Roboto Mono', monospace;
-    background: linear-gradient(120deg, #0a0a0a, #003366, #001f3f);
-    color: #00ffcc;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(120deg, #f0f4f8, #dce3e8, #bfc7d4);
+    color: #333;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -11,9 +11,10 @@ body {
 
 /* Menú de navegación */
 nav {
-    background: rgba(0, 0, 0, 0.9);
+    background: #0056b3;
     padding: 15px 0;
     width: 100%;
+    box-shadow: 0px 4px 10px rgba(0, 86, 179, 0.4);
 }
 nav ul {
     list-style: none;
@@ -26,15 +27,16 @@ nav ul li {
     margin: 0 20px;
 }
 nav ul li a {
-    color: #00ffcc;
+    color: white;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease-in-out;
     padding: 10px;
 }
 nav ul li a:hover {
-    color: #ff007f;
+    color: #ffcc00;
+    text-shadow: 0px 0px 8px #ffcc00;
 }
 
 /* Sección principal */
@@ -42,80 +44,83 @@ nav ul li a:hover {
     width: 85%;
     margin: 60px auto;
     text-align: center;
+    animation: fadeIn 1.2s ease-in-out;
 }
 h1 {
     font-size: 28px;
-    color: #00ffcc;
+    color: #0056b3;
+    text-shadow: 1px 1px 5px rgba(0, 86, 179, 0.5);
 }
 p {
     font-size: 18px;
-    color: #fff;
+    color: #333;
 }
 
-/* Botones de categorías */
-.btn {
-    display: block;
+/* Panel técnico */
+.panel {
     width: 90%;
-    max-width: 450px;
-    margin: 20px auto;
-    padding: 14px;
-    font-size: 20px;
-    background: rgba(10, 10, 10, 0.9);
-    color: #00ffcc;
-    border: 2px solid #00ffcc;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 8px;
-}
-.btn:hover {
-    background: #00ffcc;
-    color: black;
-}
-
-/* Contenedor de categorías */
-.categoria {
-    display: none;
-    background: rgba(10, 10, 10, 0.8);
-    padding: 25px;
-    margin-top: 10px;
+    background: white;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-    width: 90%;
-    max-width: 600px;
-    margin: 20px auto;
+    box-shadow: 0px 4px 8px rgba(0, 86, 179, 0.3);
+    margin: 40px auto;
+}
+
+/* Bloques de comandos */
+.comando {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 86, 179, 0.2);
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+}
+.comando:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 12px rgba(0, 86, 179, 0.4);
+}
+.comando h2 {
+    color: #0056b3;
+    font-size: 22px;
+}
+.comando p {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
 }
 
 /* Código */
 .codigo {
-    background: #111;
+    background: #eee;
     padding: 15px;
-    color: #00ff00;
+    color: #0056b3;
     font-family: monospace;
     border-radius: 8px;
     overflow-x: auto;
     max-width: 90%;
     margin: auto;
+    border-left: 5px solid #ffcc00;
 }
 
-/* Botón de regreso */
-.regresar {
-    display: block;
-    width: 90%;
-    max-width: 450px;
-    margin: 30px auto;
-    padding: 12px;
-    font-size: 20px;
-    text-align: center;
-    background: #333;
-    color: #fff;
-    border: 2px solid #fff;
-    text-decoration: none;
+/* Descripción */
+.descripcion {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 15px;
     border-radius: 8px;
-    transition: all 0.3s ease;
+    color: #333;
+    margin-top: 10px;
 }
-.regresar:hover {
-    background: #ff007f;
-    color: black;
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Ajuste responsivo */
@@ -124,12 +129,11 @@ p {
         width: 95%;
     }
 
-    .btn, .regresar {
+    .panel {
         width: 95%;
-        font-size: 18px;
     }
 
-    .categoria {
+    .comando {
         width: 95%;
         padding: 20px;
     }
@@ -137,5 +141,10 @@ p {
     .codigo {
         width: 100%;
         padding: 12px;
+    }
+
+    .regresar {
+        width: 95%;
+        font-size: 18px;
     }
 }
