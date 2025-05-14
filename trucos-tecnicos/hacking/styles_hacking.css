@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Roboto Mono', monospace;
-    background: linear-gradient(120deg, #0a0a0a, #002b5e, #001f3f);
+    background: linear-gradient(120deg, #1a1a2e, #16213e, #0f3460);
     color: #00ffcc;
     text-align: center;
     margin: 0;
@@ -14,6 +14,7 @@ nav {
     background: rgba(0, 0, 0, 0.9);
     padding: 15px 0;
     width: 100%;
+    box-shadow: 0px 4px 8px rgba(0, 255, 255, 0.2);
 }
 nav ul {
     list-style: none;
@@ -30,45 +31,59 @@ nav ul li a {
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
     padding: 10px;
 }
 nav ul li a:hover {
     color: #ff007f;
+    text-shadow: 0px 0px 8px #ff007f;
 }
 
 /* Sección principal */
-#hacking {
+#windows {
     width: 85%;
     margin: 60px auto;
     text-align: center;
+    animation: fadeIn 1.2s ease-in-out;
 }
 h1 {
     font-size: 28px;
-    color: #ff007f;
+    color: #00ffcc;
+    text-shadow: 2px 2px 10px rgba(0, 255, 255, 0.5);
 }
 p {
     font-size: 18px;
     color: #fff;
 }
 
-/* Publicaciones */
-.publicacion {
-    background: rgba(10, 10, 10, 0.8);
-    padding: 25px;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 0, 127, 0.5);
+/* Contenedor de comandos */
+.comandos-container {
     width: 90%;
-    max-width: 600px;
-    margin: 20px auto;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Bloques de comandos */
+.comando {
+    background: rgba(10, 10, 10, 0.9);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 0, 127, 0.3);
     text-align: left;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-.publicacion h2 {
+.comando:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 15px rgba(255, 0, 127, 0.5);
+}
+.comando h2 {
     color: #00ffcc;
-    font-size: 24px;
+    font-size: 22px;
+    text-shadow: 1px 1px 5px rgba(0, 255, 255, 0.5);
 }
-.publicacion p {
+.comando p {
     font-size: 16px;
     color: #fff;
     margin-top: 10px;
@@ -86,34 +101,39 @@ p {
     margin: auto;
 }
 
-/* Botón de regreso */
-.regresar {
-    display: block;
-    width: 90%;
-    max-width: 450px;
-    margin: 30px auto;
-    padding: 12px;
-    font-size: 20px;
-    text-align: center;
-    background: #333;
-    color: #fff;
-    border: 2px solid #fff;
-    text-decoration: none;
+/* Descripción */
+.descripcion {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
     border-radius: 8px;
-    transition: all 0.3s ease;
+    color: #fff;
+    margin-top: 10px;
 }
-.regresar:hover {
-    background: #ff007f;
-    color: black;
+
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Ajuste responsivo */
 @media (max-width: 768px) {
-    #hacking {
+    #windows {
         width: 95%;
     }
 
-    .publicacion {
+    .comandos-container {
+        width: 100%;
+    }
+
+    .comando {
         width: 95%;
         padding: 20px;
     }
