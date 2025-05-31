@@ -23,10 +23,78 @@
 
         <!-- Publicación 1 -->
         <div class="publicacion">
-            <h2>🛠 Pruebas de Penetración: Introducción</h2>
+            <h2>🛠 Simulación de Ataque DoS al Panel Web de un Router Vulnerable (CVE-2011-3192)</h2>
             <p>Aquí agregaré información sobre metodologías y enfoques de pentesting.</p>
             <pre class="codigo">
-                <!-- Espacio para comandos o código -->
+                1. Introducción
+
+                Este informe documenta la simulación de un ataque de Denegación de Servicio (DoS) contra el panel de administración de un router, explotando la vulnerabilidad identificada como CVE-2011-3192. Esta práctica fue realizada en un entorno de laboratorio controlado con fines educativos y de investigación en ciberseguridad.
+                
+                2. Objetivo
+                
+                Demostrar de forma práctica cómo un servidor web vulnerable al manejo de rangos HTTP puede ser sobrecargado mediante peticiones manipuladas, interrumpiendo su disponibilidad sin afectar el resto de los servicios de red.
+                
+                3. Entorno de Laboratorio
+                
+                Dispositivo objetivo: Punto de acceso Xiaomi (192.168.31.1)
+                
+                Sistema operativo atacante: Kali Linux
+                
+                Herramientas utilizadas:
+                
+                nmap para escaneo y detección de vulnerabilidades
+                
+                curl para pruebas de cabeceras HTTP
+                
+                Script apache-killer.py para simular el ataque DoS
+                
+                4. Identificación del Servicio Vulnerable
+                
+                Se escaneó el puerto 80 del router con nmap:
+                
+                bash
+                Copiar
+                Editar
+                sudo nmap -sV --script vuln -p 80 192.168.31.1
+                Resultado:
+                Se identificó que el servicio HTTP estaba corriendo sobre Nginx y es vulnerable a peticiones con rangos byte maliciosos, asociadas al CVE-2011-3192.
+                
+                5. Verificación de la Vulnerabilidad
+                
+                Se utilizó curl para verificar si el servidor acepta encabezados "Range":
+                
+                bash
+                Copiar
+                Editar
+                curl -I -H "Range: bytes=0-1024" http://192.168.31.1
+                Respuesta obtenida:
+                
+                css
+                Copiar
+                Editar
+                HTTP/1.1 206 Partial Content
+                Esto indica que el servidor acepta solicitudes parciales, requisito para el ataque.
+                
+                6. Ejecución del Ataque
+                
+                Se utilizó el script apache-killer.py con los siguientes parámetros:
+                
+                bash
+                Copiar
+                Editar
+                sudo python3 apache-killer.py -v -d 192.168.31.1
+                Este script genera múltiples solicitudes con encabezados Range superpuestos que saturan los recursos del servidor web.
+                
+                7. Resultado del Ataque
+                
+                Al recargar el panel de administración del router, el navegador devolvió:
+                
+                Copiar
+                Editar
+                503 Service Temporarily Unavailable
+                Esto demuestra que el servicio HTTP fue interrumpido con éxito, mientras que la conexión general a internet permaneció operativa.
+
+
             </pre>
         </div>
 
