@@ -107,11 +107,11 @@ p {
 
 .video-container {
     display: flex;
-    justify-content: center; /* Centrar el video */
-    align-items: center;
-    margin: 40px auto; /* Espacio alrededor */
-    max-width: 80%;
+    justify-content: center;
+    align-items: center; /* Esto lo centra verticalmente */
+    height: 100vh; /* Ocupar toda la pantalla */
 }
+
 
 .video-container iframe {
     width: 100%; /* Ajuste responsive */
