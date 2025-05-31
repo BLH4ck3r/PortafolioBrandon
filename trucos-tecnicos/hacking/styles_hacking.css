@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
-body {
-    font-family: 'Share Tech Mono', monospace;
-    background: linear-gradient(120deg, #050505, #0f0f0f, #1b1b1b);
-    color: #ccc;
-    margin: 0;
-    padding: 0;
+body { 
+    font-family: 'Share Tech Mono', monospace; 
+    background: linear-gradient(120deg, #050505, #0f0f0f, #1b1b1b); 
+    color: #33ff33; 
+    text-align: center; 
+    margin: 0; 
+    padding: 0; 
 }
 
 /* Menú de navegación */
@@ -94,7 +95,7 @@ p {
 .codigo {
     background: #111;
     padding: 15px;
-    color: #ccc;
+    color: #33ff33;
     font-family: monospace;
     border-radius: 8px;
     overflow-x: auto;
