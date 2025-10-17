@@ -1,175 +1,182 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto+Mono:wght@400&display=swap');
 
-body {
-    font-family: 'Roboto Mono', monospace;
-    background: linear-gradient(120deg, #0a0a0a, #002b5e, #001f3f);
-    color: #00ffcc;
-    text-align: center;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Menú de navegación */
+body {
+    font-family: 'Roboto Mono', monospace;
+    background: radial-gradient(circle at top left, #001a2b 0%, #000 90%);
+    color: #00ffc8;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* ==== NAVBAR ==== */
 nav {
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(6px);
     padding: 15px 0;
     width: 100%;
-    box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.25);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    padding: 0;
-    width: 100%;
-}
-nav ul li {
-    margin: 0 20px;
+    align-items: center;
+    gap: 40px;
 }
 nav ul li a {
     color: #00ffcc;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
-    transition: color 0.3s ease;
-    padding: 10px;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    position: relative;
+}
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #ff007f;
+    transition: 0.3s ease;
 }
 nav ul li a:hover {
     color: #ff007f;
 }
-
-/* Sección de contenido */
-#contenido {
-    width: 80%;
-    margin: 60px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
+nav ul li a:hover::after {
+    width: 100%;
 }
 
-/* Foto */
+/* ==== CONTENIDO PRINCIPAL ==== */
+#contenido {
+    width: 85%;
+    margin: 80px auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    animation: fadeIn 1.5s ease;
+}
+
+/* ==== FOTO ==== */
 .foto-container {
+    width: 320px;
     text-align: center;
-    width: 40%;
+    position: relative;
 }
 .foto-container img {
-    width: 220px;
-    height: 220px;
+    width: 230px;
+    height: 230px;
     border-radius: 50%;
-    border: 4px solid #00ffcc;
-    box-shadow: 0 0 20px #00ffcc;
+    border: 3px solid #00ffcc;
+    box-shadow: 0 0 25px #00ffcc;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.foto-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #00ffcc, 0 0 70px rgba(0, 255, 204, 0.4);
 }
 .foto-container h2 {
     font-size: 22px;
+    margin-top: 15px;
     color: #00ffcc;
-    margin-top: 10px;
 }
 
-/* Texto */
+/* ==== TEXTO ==== */
 .texto-container {
-    max-width: 600px;
-    width: 60%;
+    max-width: 650px;
+    text-align: left;
+    background: rgba(0, 15, 30, 0.6);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.texto-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
 }
 
-/* Secciones */
 .perfil h2 {
     font-size: 24px;
     color: #00ffcc;
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
 }
 .perfil p {
-    font-size: 18px;
-    color: #fff;
-    margin-top: 10px;
+    font-size: 17px;
+    color: #e0e0e0;
+    line-height: 1.7;
+    margin-bottom: 25px;
 }
 
-/* Redes Sociales */
+/* ==== FOOTER ==== */
 #redes {
-    padding: 30px;
-    background: rgba(0, 0, 0, 0.8);
-    width: 100%;
-    margin-top: 40px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.9);
+    border-top: 1px solid rgba(0, 255, 255, 0.2);
+    box-shadow: 0 -5px 20px rgba(0, 255, 255, 0.15);
+    margin-top: 60px;
 }
 #redes h2 {
     font-size: 22px;
     color: #00ffcc;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 .social-icons a img {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s ease, filter 0.3s ease;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 5px #00ffcc);
 }
 .social-icons a img:hover {
-    transform: scale(1.2);
-    filter: brightness(150%);
+    transform: scale(1.25);
+    filter: drop-shadow(0 0 20px #ff007f);
 }
 
-/* Ajustes responsivos para móviles */
-@media (max-width: 768px) {
-    /* Ajuste de la barra de navegación en móviles */
-    nav {
-        width: 100%;
-        box-shadow: 0px 6px 15px rgba(0, 255, 0, 0.7);
+/* ==== ANIMACIONES ==== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        padding: 15px 0;
-        width: 100%;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    nav ul li {
-        margin: 12px 0;
-        width: 100%;
-        text-align: center;
-    }
-    nav ul li a {
-        font-size: 20px;
-        padding: 12px;
-        display: block;
-        width: 100%;
-        text-align: center;
-    }
+}
 
-    /* Ajuste de contenido en móviles */
+/* ==== RESPONSIVE ==== */
+@media (max-width: 900px) {
     #contenido {
-        flex-direction: column; /* Disposición vertical */
-        width: 100%;
-        padding: 20px;
+        flex-direction: column;
+        text-align: center;
     }
-
-    .foto-container {
-        width: 100%; /* Foto centrada */
-    }
-    .foto-container img {
-        width: 180px;
-        height: 180px;
-    }
-    .foto-container h2 {
-        font-size: 20px;
-    }
-
     .texto-container {
-        width: 100%;
-        padding: 15px;
-        background: transparent; /* Elimina la tarjeta en móviles */
-        box-shadow: none;
+        text-align: center;
     }
-
     .perfil h2 {
-        font-size: 22px;
-    }
-
-    .perfil p {
-        font-size: 16px;
-    }
-
-    .social-icons {
-        flex-wrap: wrap; /* Mejor distribución */
+        text-align: center;
     }
 }
 
