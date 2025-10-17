@@ -1,193 +1,172 @@
+/* ===== Fuente general ===== */
 body {
-  font-family: 'Rajdhani', sans-serif;
-  background: radial-gradient(circle at top left, #040404 0%, #0a0a0f 100%);
-  color: #eaeaea;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+    font-family: 'Rajdhani', sans-serif;
+    background-color: #0a0a0f;
+    color: #eaeaea;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Fondo dinámico tipo red */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
-  opacity: 0.05;
-  animation: move-bg 20s linear infinite;
-  z-index: -1;
-}
-
-@keyframes move-bg {
-  from { background-position: 0 0; }
-  to { background-position: 1000px 1000px; }
-}
-
-/* ===== NAVBAR ===== */
+/* ===== Barra de navegación ===== */
 .navbar {
-  background: rgba(10, 10, 15, 0.9);
-  border-bottom: 1px solid #00ff9f;
-  padding: 15px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(10px);
-  z-index: 100;
+    background: rgba(10, 10, 15, 0.95);
+    border-bottom: 1px solid #00ff9f;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
 }
 
 .logo {
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: #00ff9f;
-  letter-spacing: 1px;
+    font-size: 1.5rem;
+    color: #00ff9f;
+    font-weight: 700;
 }
 
 .logo span {
-  color: #fff;
-}
-
-.glow {
-  text-shadow: 0 0 10px #00ff9f, 0 0 30px #00ff9f;
+    color: #eaeaea;
 }
 
 .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
+    list-style: none;
+    display: flex;
+    gap: 30px;
 }
 
 .nav-links li a {
-  color: #eaeaea;
-  text-decoration: none;
-  transition: 0.3s;
+    text-decoration: none;
+    color: #eaeaea;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
 .nav-links li a:hover,
 .nav-links li a.active {
-  color: #00ff9f;
-  text-shadow: 0 0 10px #00ff9f;
+    color: #00ff9f;
 }
 
-/* ===== CONTENIDO ===== */
+/* ===== Contenido principal ===== */
 #contenido {
-  text-align: center;
-  padding: 80px 20px;
-  max-width: 1000px;
-  margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: auto;
 }
 
 .foto-container {
-  margin-bottom: 50px;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
 .foto-perfil {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 2px solid #00ff9f;
-  box-shadow: 0 0 20px #00ff9f, 0 0 40px #00ff9f inset;
-  animation: pulseGlow 3s infinite alternate;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid #00ff9f;
+    box-shadow: 0 0 20px #00ff9f;
+    transition: 0.4s;
 }
 
-@keyframes pulseGlow {
-  from { box-shadow: 0 0 10px #00ff9f; }
-  to { box-shadow: 0 0 30px #00ff9f, 0 0 60px #00ff9f inset; }
-}
-
-.titulo-principal {
-  font-size: 1.4rem;
-  color: #00ff9f;
-  background: linear-gradient(90deg, #00ff9f, #0ff, #00ff9f);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 6s linear infinite;
-}
-
-@keyframes shine {
-  from { background-position: 0%; }
-  to { background-position: 200%; }
+.foto-perfil:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #00ff9f;
 }
 
 .texto-container {
-  display: grid;
-  gap: 40px;
+    display: grid;
+    gap: 40px;
 }
 
 .perfil {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(0, 255, 159, 0.3);
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 0 15px rgba(0, 255, 159, 0.05);
-  transition: 0.4s;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 159, 0.2);
+    border-radius: 15px;
+    padding: 25px;
+    transition: 0.3s;
 }
 
 .perfil:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 0 25px rgba(0, 255, 159, 0.2);
+    transform: translateY(-5px);
+    border-color: #00ff9f;
 }
 
 .perfil h2 {
-  color: #00ff9f;
-  margin-bottom: 15px;
-  font-weight: 700;
+    color: #00ff9f;
+    margin-bottom: 10px;
 }
 
-/* ===== ANIMACIONES ===== */
-.fade-in {
-  animation: fadeIn 1.2s ease-in-out;
-}
-
-.slide-up {
-  opacity: 0;
-  animation: slideUp 1s ease-out forwards;
-}
-
-.slide-up.delay {
-  animation-delay: 0.4s;
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== SOCIAL ===== */
+/* ===== Footer ===== */
 #redes {
-  text-align: center;
-  padding: 60px 20px;
-  border-top: 1px solid #00ff9f;
-  background: rgba(10, 10, 15, 0.9);
+    background: #0c0c12;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 80px;
+    border-top: 1px solid #00ff9f;
+}
+
+#redes h2 {
+    color: #00ff9f;
+    margin-bottom: 20px;
 }
 
 .social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
 }
 
 .social-icon img {
-  width: 40px;
-  height: 40px;
-  filter: brightness(0.7);
-  transition: 0.3s;
+    width: 40px;
+    height: 40px;
+    transition: 0.3s;
+    filter: brightness(0.8);
 }
 
-.neon-hover:hover img {
-  transform: scale(1.2);
-  filter: brightness(1) drop-shadow(0 0 15px #00ff9f);
+.social-icon:hover img {
+    transform: scale(1.2);
+    filter: brightness(1);
 }
 
 .copy {
-  color: #777;
-  font-size: 0.9rem;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* ===== Animaciones ===== */
+.fade-in {
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .foto-perfil {
+        width: 150px;
+        height: 150px;
+    }
+
+    #contenido {
+        padding: 50px 15px;
+    }
 }
