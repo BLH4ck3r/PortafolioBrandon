@@ -1,177 +1,172 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto+Mono:wght@400&display=swap');
-
+/* ===== Fuente general ===== */
 body {
-    font-family: 'Roboto Mono', monospace;
-    background: linear-gradient(120deg, #0a0a0a, #002b5e, #001f3f);
-    color: #00ffcc;
-    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+    background-color: #0a0a0f;
+    color: #eaeaea;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Menú de navegación */
-nav {
-    background: rgba(0, 0, 0, 0.9);
-    padding: 15px 0;
-    width: 100%;
-    box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.5);
+/* ===== Barra de navegación ===== */
+.navbar {
+    background: rgba(10, 10, 15, 0.95);
+    border-bottom: 1px solid #00ff9f;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
 }
-nav ul {
+
+.logo {
+    font-size: 1.5rem;
+    color: #00ff9f;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #eaeaea;
+}
+
+.nav-links {
     list-style: none;
     display: flex;
-    justify-content: center;
-    padding: 0;
-    width: 100%;
-}
-nav ul li {
-    margin: 0 20px;
-}
-nav ul li a {
-    color: #00ffcc;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-    padding: 10px;
-}
-nav ul li a:hover {
-    color: #ff007f;
+    gap: 30px;
 }
 
-/* Sección de contenido */
+.nav-links li a {
+    text-decoration: none;
+    color: #eaeaea;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #00ff9f;
+}
+
+/* ===== Contenido principal ===== */
 #contenido {
-    width: 80%;
-    margin: 60px auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.foto-container {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.foto-perfil {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid #00ff9f;
+    box-shadow: 0 0 20px #00ff9f;
+    transition: 0.4s;
+}
+
+.foto-perfil:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #00ff9f;
+}
+
+.texto-container {
+    display: grid;
     gap: 40px;
 }
 
-/* Foto */
-.foto-container {
-    text-align: center;
-    width: 40%;
-}
-.foto-container img {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    border: 4px solid #00ffcc;
-    box-shadow: 0 0 20px #00ffcc;
-}
-.foto-container h2 {
-    font-size: 22px;
-    color: #00ffcc;
-    margin-top: 10px;
+.perfil {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 159, 0.2);
+    border-radius: 15px;
+    padding: 25px;
+    transition: 0.3s;
 }
 
-/* Texto */
-.texto-container {
-    max-width: 600px;
-    width: 60%;
+.perfil:hover {
+    transform: translateY(-5px);
+    border-color: #00ff9f;
 }
 
-/* Secciones */
 .perfil h2 {
-    font-size: 24px;
-    color: #00ffcc;
-}
-.perfil p {
-    font-size: 18px;
-    color: #fff;
-    margin-top: 10px;
+    color: #00ff9f;
+    margin-bottom: 10px;
 }
 
-/* Redes Sociales */
+/* ===== Footer ===== */
 #redes {
-    padding: 30px;
-    background: rgba(0, 0, 0, 0.8);
-    width: 100%;
-    margin-top: 40px;
+    background: #0c0c12;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 80px;
+    border-top: 1px solid #00ff9f;
 }
+
 #redes h2 {
-    font-size: 22px;
-    color: #00ffcc;
+    color: #00ff9f;
+    margin-bottom: 20px;
 }
+
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
+    margin-bottom: 20px;
 }
-.social-icons a img {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s ease, filter 0.3s ease;
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+    transition: 0.3s;
+    filter: brightness(0.8);
 }
-.social-icons a img:hover {
+
+.social-icon:hover img {
     transform: scale(1.2);
-    filter: brightness(150%);
+    filter: brightness(1);
 }
 
-/* Ajustes responsivos para móviles */
+.copy {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* ===== Animaciones ===== */
+.fade-in {
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
-    /* Ajuste de la barra de navegación en móviles */
-    nav {
-        width: 100%;
-        box-shadow: 0px 6px 15px rgba(0, 255, 0, 0.7);
-    }
-    nav ul {
+    .nav-links {
         flex-direction: column;
-        align-items: center;
-        padding: 15px 0;
-        width: 100%;
-    }
-    nav ul li {
-        margin: 12px 0;
-        width: 100%;
-        text-align: center;
-    }
-    nav ul li a {
-        font-size: 20px;
-        padding: 12px;
-        display: block;
-        width: 100%;
-        text-align: center;
-    }
-
-    /* Ajuste de contenido en móviles */
-    #contenido {
-        flex-direction: column; /* Disposición vertical */
-        width: 100%;
-        padding: 20px;
-    }
-
-    .foto-container {
-        width: 100%; /* Foto centrada */
-    }
-    .foto-container img {
-        width: 180px;
-        height: 180px;
-    }
-    .foto-container h2 {
-        font-size: 20px;
-    }
-
-    .texto-container {
-        width: 100%;
+        gap: 15px;
+        background: rgba(0, 0, 0, 0.9);
         padding: 15px;
-        background: transparent; /* Elimina la tarjeta en móviles */
-        box-shadow: none;
+        border-radius: 10px;
     }
 
-    .perfil h2 {
-        font-size: 22px;
+    .foto-perfil {
+        width: 150px;
+        height: 150px;
     }
 
-    .perfil p {
-        font-size: 16px;
-    }
-
-    .social-icons {
-        flex-wrap: wrap; /* Mejor distribución */
+    #contenido {
+        padding: 50px 15px;
     }
 }
-
-
-
