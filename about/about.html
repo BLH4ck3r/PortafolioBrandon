@@ -1,90 +1,50 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Mí | Portafolio</title>
-    <link rel="stylesheet" href="styles-about.css">
-    <link rel="icon" href="../assets/icon.png">
-</head>
-<body>
-
-    <!-- === NAVBAR === -->
-    <nav>
-        <ul>
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="about.html" class="active">Sobre Mí</a></li>
-            <li><a href="../projects/projects.html">Proyectos</a></li>
-            <li><a href="../trucos-tecnicos/trucostecnicos.html">Trucos Técnicos</a></li>
-        </ul>
-    </nav>
-
-    <!-- === CONTENIDO PRINCIPAL === -->
-    <section id="contenido">
+<section id="contenido">
+    <div class="perfil-card">
         <div class="foto-container">
             <img src="imagen.png" alt="Foto de perfil">
-            <h2 id="typing-text">👨‍💻 Ingeniero de Sistemas y Computación</h2>
-        </div>
-
-        <div class="texto-container">
-            <div class="perfil">
-                <h2>🔒 Perfil Profesional</h2>
-                <p>
-                    Ingeniero de Sistemas y Computación especializado en ciberseguridad y protección de datos. 
-                    Apasionado por el análisis de vulnerabilidades, la defensa ante amenazas y la mejora continua 
-                    de la seguridad en entornos corporativos. Experiencia en soporte técnico, gestión de redes, 
-                    Active Directory y herramientas de auditoría como Burp Suite.  
-                    Competente en programación con Python orientado a la automatización de pruebas de seguridad 
-                    y análisis forense digital. Mi propósito es fortalecer la infraestructura tecnológica de las 
-                    organizaciones y fomentar una cultura de seguridad digital responsable.
-                </p>
-            </div>
-
-            <div class="perfil">
-                <h2>⚡ Perfil Personal</h2>
-                <p>
-                    Más allá del ámbito profesional, disfruto del deporte, especialmente el fútbol y el baloncesto, 
-                    y encuentro en la música una fuente constante de inspiración y enfoque.  
-                    Me interesa comprender el comportamiento humano, la psicología y cómo las emociones influyen 
-                    en nuestras decisiones, temas que aplico también en el análisis de la ingeniería social 
-                    dentro de la ciberseguridad.
-                </p>
+            <h2>👨‍💻 Brandon Castro</h2>
+            <h3>Ingeniero de Sistemas y Computación</h3>
+            <p class="resumen">
+                Especialista en ciberseguridad ética con experiencia en análisis de vulnerabilidades, 
+                auditorías técnicas y automatización de pruebas con Python.
+            </p>
+            <div class="social-mini">
+                <a href="https://github.com/BLH4ck3r" target="_blank">
+                    <img src="github.png" alt="GitHub">
+                </a>
+                <a href="https://www.instagram.com/brandoncastro3226" target="_blank">
+                    <img src="instagram.png" alt="Instagram">
+                </a>
+                <a href="mailto:castrobrandon871@gmail.com" target="_blank">
+                    <img src="gmail.png" alt="Gmail">
+                </a>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- === FOOTER === -->
-    <footer id="redes">
-        <h2>🌐 Conéctate Conmigo</h2>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/brandoncastro3226" target="_blank">
-                <img src="instagram.png" alt="Instagram">
-            </a>
-            <a href="https://github.com/BLH4ck3r" target="_blank">
-                <img src="github.png" alt="GitHub">
-            </a>
-            <a href="mailto:castrobrandon871@gmail.com" target="_blank">
-                <img src="gmail.png" alt="Gmail">
-            </a>
+    <div class="texto-container">
+        <div class="perfil">
+            <h2>🔒 Perfil Profesional</h2>
+            <p>
+                Ingeniero de Sistemas y Computación enfocado en la protección de infraestructuras tecnológicas 
+                y el fortalecimiento de la seguridad digital. Cuento con experiencia en el uso de herramientas 
+                como Burp Suite, Active Directory, Wireshark y metodologías de pentesting. 
+                Apasionado por la automatización de auditorías de seguridad mediante el desarrollo de scripts 
+                en Python y la aplicación de principios éticos para garantizar entornos cibernéticos más seguros 
+                y eficientes.
+            </p>
         </div>
-    </footer>
 
-    <!-- === EFECTO DE ESCRITURA === -->
-    <script>
-        const text = "👨‍💻 Ingeniero de Sistemas y Computación";
-        const typingElement = document.getElementById("typing-text");
-        let i = 0;
+        <div class="perfil">
+            <h2>⚡ Perfil Personal</h2>
+            <p>
+                Me considero una persona apasionada por la tecnología, el deporte y la música. 
+                Interesado en la psicología y en comprender cómo las emociones humanas influyen en la seguridad 
+                y la ingeniería social. Disfruto aprender constantemente y aplicar el conocimiento adquirido 
+                para fortalecer la seguridad y proteger la información de las personas.
+            </p>
+        </div>
+    </div>
+</section>
 
-        function typeWriter() {
-            if (i < text.length) {
-                typingElement.innerHTML = text.substring(0, i + 1);
-                i++;
-                setTimeout(typeWriter, 70);
-            }
-        }
-        window.onload = typeWriter;
-    </script>
-
-</body>
-</html>
 
