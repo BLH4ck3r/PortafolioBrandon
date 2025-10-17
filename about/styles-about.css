@@ -180,3 +180,87 @@ nav ul li a:hover::after {
     }
 }
 
+/* Tarjeta lateral con la foto y la info personal */
+.perfil-card {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+    width: 35%;
+    text-align: center;
+    backdrop-filter: blur(6px);
+}
+
+.foto-container img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid #00ffcc;
+    box-shadow: 0 0 25px #00ffcc;
+}
+
+.foto-container h2 {
+    color: #00ffcc;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.foto-container h3 {
+    color: #fff;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.resumen {
+    font-size: 15px;
+    color: #d9faff;
+    margin: 15px 0;
+    line-height: 1.5;
+}
+
+.social-mini {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-mini img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0.9);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-mini img:hover {
+    transform: scale(1.2);
+    filter: brightness(2);
+}
+
+/* Ajuste para el layout */
+#contenido {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    margin-top: 60px;
+}
+
+.texto-container {
+    width: 55%;
+    text-align: left;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #contenido {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .perfil-card, .texto-container {
+        width: 90%;
+    }
+}
+
+
