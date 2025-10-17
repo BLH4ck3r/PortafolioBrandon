@@ -5,39 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Mí | Portafolio</title>
     <link rel="stylesheet" href="styles-about.css">
+    <link rel="icon" href="../assets/icon.png">
 </head>
 <body>
 
+    <!-- === NAVBAR === -->
     <nav>
         <ul>
             <li><a href="../index.html">Inicio</a></li>
-            <li><a href="about.html">Sobre Mí</a></li>
+            <li><a href="about.html" class="active">Sobre Mí</a></li>
             <li><a href="../projects/projects.html">Proyectos</a></li>
-            <li><a href="../trucos-tecnicos/trucostecnicos.html">Trucos Tecnicos</a></li>
+            <li><a href="../trucos-tecnicos/trucostecnicos.html">Trucos Técnicos</a></li>
         </ul>
     </nav>
 
+    <!-- === CONTENIDO PRINCIPAL === -->
     <section id="contenido">
         <div class="foto-container">
             <img src="imagen.png" alt="Foto de perfil">
-            <h2>👨‍💻 Ingeniero de Sistemas y Computación</h2>
+            <h2 id="typing-text">👨‍💻 Ingeniero de Sistemas y Computación</h2>
         </div>
 
         <div class="texto-container">
             <div class="perfil">
                 <h2>🔒 Perfil Profesional</h2>
-                <p>Apasionado por la ciberseguridad, con sólida experiencia en brindar soporte a usuarios finales. Buen manejo de Burp Suite y Active Directory, con amplios conocimientos en redes y protocolos de seguridad. Habilidades en reparación de hardware y programación en Python. Conocimientos profundos en diversas formas de hacking. Firme compromiso con la protección de datos y la mejora continua de la seguridad informática.</p>
+                <p>
+                    Ingeniero de Sistemas y Computación especializado en ciberseguridad y protección de datos. 
+                    Apasionado por el análisis de vulnerabilidades, la defensa ante amenazas y la mejora continua 
+                    de la seguridad en entornos corporativos. Experiencia en soporte técnico, gestión de redes, 
+                    Active Directory y herramientas de auditoría como Burp Suite.  
+                    Competente en programación con Python orientado a la automatización de pruebas de seguridad 
+                    y análisis forense digital. Mi propósito es fortalecer la infraestructura tecnológica de las 
+                    organizaciones y fomentar una cultura de seguridad digital responsable.
+                </p>
             </div>
 
             <div class="perfil">
                 <h2>⚡ Perfil Personal</h2>
-                <p>Fuera del mundo tecnológico, me gusta mucho el fútbol y el baloncesto. La música es parte de mi rutina diaria, siempre explorando nuevos géneros. Además, me interesa profundamente la psicología, el comportamiento humano y cómo las emociones influyen en nuestras decisiones.</p>
+                <p>
+                    Más allá del ámbito profesional, disfruto del deporte, especialmente el fútbol y el baloncesto, 
+                    y encuentro en la música una fuente constante de inspiración y enfoque.  
+                    Me interesa comprender el comportamiento humano, la psicología y cómo las emociones influyen 
+                    en nuestras decisiones, temas que aplico también en el análisis de la ingeniería social 
+                    dentro de la ciberseguridad.
+                </p>
             </div>
         </div>
     </section>
 
+    <!-- === FOOTER === -->
     <footer id="redes">
-        <h2>🌐 Conéctate conmigo</h2>
+        <h2>🌐 Conéctate Conmigo</h2>
         <div class="social-icons">
             <a href="https://www.instagram.com/brandoncastro3226" target="_blank">
                 <img src="instagram.png" alt="Instagram">
@@ -51,5 +69,22 @@
         </div>
     </footer>
 
+    <!-- === EFECTO DE ESCRITURA === -->
+    <script>
+        const text = "👨‍💻 Ingeniero de Sistemas y Computación";
+        const typingElement = document.getElementById("typing-text");
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                typingElement.innerHTML = text.substring(0, i + 1);
+                i++;
+                setTimeout(typeWriter, 70);
+            }
+        }
+        window.onload = typeWriter;
+    </script>
+
 </body>
 </html>
+
