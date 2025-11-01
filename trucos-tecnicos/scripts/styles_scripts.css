@@ -1,152 +1,135 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
-
 body {
+    background: radial-gradient(circle at top, #020d1f, #000);
     font-family: 'Fira Code', monospace;
-    background: linear-gradient(120deg, #001f3f, #17202A, #0F0F23);
-    color: #FFD43B; /* Python Yellow */
-    text-align: center;
+    color: #e0e0e0;
     margin: 0;
     padding: 0;
 }
 
-/* Menú de navegación */
+/* --- NAV --- */
 nav {
-    background: #003366; /* PowerShell Blue */
-    padding: 15px 0;
-    width: 100%;
-    box-shadow: 0px 4px 10px rgba(0, 86, 179, 0.4);
+    background: #001f3f;
+    padding: 15px;
+    text-align: center;
 }
+
 nav ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
+    margin: 0;
     padding: 0;
-    width: 100%;
 }
+
 nav ul li {
+    display: inline;
     margin: 0 20px;
 }
-nav ul li a {
-    color: #FFD43B; /* Python Yellow */
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
-    padding: 10px;
-}
-nav ul li a:hover {
-    color: #00FF00; /* Bash Green */
-    text-shadow: 0px 0px 8px #00FF00;
-}
 
-/* Sección principal */
-#scripts {
-    width: 85%;
-    margin: 60px auto;
-    text-align: center;
-    animation: fadeIn 1.2s ease-in-out;
-}
-h1 {
-    font-size: 28px;
-    color: #FFD43B; /* Python Yellow */
-    text-shadow: 1px 1px 5px rgba(255, 212, 59, 0.5);
-}
-p {
-    font-size: 18px;
-    color: #ccc;
-}
-
-/* Terminal simulada */
-.terminal {
-    width: 90%;
-    background: #17202A;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.3);
-    margin: 40px auto;
-    border: 2px solid #003366; /* PowerShell Blue */
-}
-
-/* Bloques de scripts */
-.script {
-    background: rgba(10, 10, 10, 0.9);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(255, 212, 59, 0.3);
-    text-align: left;
-    transition: all 0.3s ease-in-out;
-}
-.script:hover {
-    transform: scale(1.02);
-    box-shadow: 0px 6px 12px rgba(255, 212, 59, 0.5);
-}
-.script h2 {
-    color: #00FF00; /* Bash Green */
-    font-size: 22px;
-    text-shadow: 1px 1px 5px rgba(0, 255, 0, 0.5);
-}
-.script p {
-    font-size: 16px;
-    color: #ccc;
-    margin-top: 10px;
-}
-
-/* Código */
-.codigo {
-    background: #111;
-    padding: 15px;
-    color: #003366; /* PowerShell Blue */
-    font-family: monospace;
-    border-radius: 8px;
-    overflow-x: auto;
-    max-width: 90%;
-    margin: auto;
-    border-left: 5px solid #FFD43B; /* Python Yellow */
-}
-
-/* Descripción */
-.descripcion {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    border-radius: 8px;
+nav a {
     color: #fff;
-    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-/* Animaciones */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+nav a:hover, .active {
+    color: #ffda44;
 }
 
-/* Ajuste responsivo */
-@media (max-width: 768px) {
-    #scripts {
-        width: 95%;
-    }
-
-    .terminal {
-        width: 95%;
-    }
-
-    .script {
-        width: 95%;
-        padding: 20px;
-    }
-
-    .codigo {
-        width: 100%;
-        padding: 12px;
-    }
-
-    .regresar {
-        width: 95%;
-        font-size: 18px;
-    }
+/* --- HERO --- */
+.hero {
+    text-align: center;
+    padding: 70px 20px;
 }
+
+.hero h1 {
+    font-size: 2.5em;
+    color: #ffda44;
+    text-shadow: 0 0 15px #ffda44;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 10px auto 40px;
+    color: #bbb;
+    font-size: 1.1em;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    background: none;
+    border: 1px solid #ffda44;
+    color: #ffda44;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: #ffda44;
+    color: #000;
+}
+
+/* --- GRID --- */
+.scripts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.script-card {
+    background: rgba(15, 20, 40, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.05);
+    transition: 0.3s;
+}
+
+.script-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+}
+
+.script-card h2 {
+    color: #ffd740;
+    margin-bottom: 15px;
+}
+
+.script-card p {
+    color: #cfcfcf;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: linear-gradient(90deg, #ffda44, #ffc107);
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #fff176;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    font-size: 0.9em;
+    border-top: 1px solid #222;
+}
+
