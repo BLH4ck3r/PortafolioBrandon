@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scripts de Ciberseguridad</title>
+    <title>Scripts Técnicos en Ciberseguridad</title>
     <link rel="stylesheet" href="styles_scripts.css">
 </head>
 <body>
@@ -13,52 +13,84 @@
             <li><a href="../../index.html">Inicio</a></li>
             <li><a href="../../about/about.html">Sobre Mí</a></li>
             <li><a href="../../projects/projects.html">Proyectos</a></li>
-            <li><a href="../trucostecnicos.html">Trucos Técnicos</a></li>
+            <li><a class="active" href="../trucostecnicos.html">Trucos Técnicos</a></li>
         </ul>
     </nav>
 
-    <section id="scripts">
-        <h1>📜 Scripts Técnicos en Ciberseguridad</h1>
-        <p>Explora scripts organizados por categoría para mejorar la seguridad y el análisis de sistemas.</p>
+    <header class="hero">
+        <h1>⚔️ Scripts Técnicos en Ciberseguridad</h1>
+        <p>Explora herramientas y scripts creados para pruebas éticas, automatización y análisis de sistemas.</p>
 
-        <button class="btn" onclick="toggleSection('redes')">🔍 Scripts de Redes</button>
-        <div id="redes" class="categoria">
-            <h2>🔹 Monitoreo de tráfico</h2>
-            <p>Aquí agregaré scripts relacionados con análisis de redes.</p>
-            <pre>
-                <!-- Mi código  -->
-            </pre>
-            <a href="https://github.com/TU_USUARIO/redes" class="btn">Ver código en GitHub</a>
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterScripts('all')">Todos</button>
+            <button class="filter-btn" onclick="filterScripts('redes')">Redes</button>
+            <button class="filter-btn" onclick="filterScripts('hacking')">Hacking Ético</button>
+            <button class="filter-btn" onclick="filterScripts('automatizacion')">Automatización</button>
+        </div>
+    </header>
+
+    <section class="scripts-grid">
+
+        <div class="script-card redes">
+            <h2>🌐 Analizador de Paquetes</h2>
+            <p>Script para capturar y analizar tráfico en red usando Python y Scapy.</p>
+            <a href="#" class="btn">Ver en GitHub</a>
         </div>
 
-        <button class="btn" onclick="toggleSection('hacking')">🔒 Scripts de Hacking Ético</button>
-        <div id="hacking" class="categoria">
-            <h2>🛠 Fuerza Bruta en Login</h2>
-            <p>Aquí agregaré scripts relacionados con hacking ético.</p>
-            <pre>
-                <!-- Mi código  -->
-            </pre>
-            <a href="https://github.com/TU_USUARIO/hacking" class="btn">Ver código en GitHub</a>
+        <div class="script-card redes">
+            <h2>🛰 Escáner de Puertos</h2>
+            <p>Escáner TCP/UDP con detección de servicios — ideal para auditorías de red.</p>
+            <a href="#" class="btn">Ver en GitHub</a>
         </div>
 
-        <button class="btn" onclick="toggleSection('automatizacion')">⚙️ Scripts de Automatización</button>
-        <div id="automatizacion" class="categoria">
-            <h2>🤖 Automatización de tareas</h2>
-            <p>Aquí puedes agregaré scripts relacionados con automatización.</p>
-            <pre>
-                <!-- Mi código -->
-            </pre>
-            <a href="https://github.com/TU_USUARIO/automatizacion" class="btn">Ver código en GitHub</a>
+        <div class="script-card hacking">
+            <h2>🔑 Ataque de Fuerza Bruta</h2>
+            <p>Simula un ataque ético para probar la seguridad de contraseñas.</p>
+            <a href="#" class="btn">Ver en GitHub</a>
+        </div>
+
+        <div class="script-card hacking">
+            <h2>🕵️ Enumerador de Directorios</h2>
+            <p>Encuentra rutas ocultas en aplicaciones web de forma automatizada.</p>
+            <a href="#" class="btn">Ver en GitHub</a>
+        </div>
+
+        <div class="script-card automatizacion">
+            <h2>🤖 Automatizador de Escaneos</h2>
+            <p>Ejecuta múltiples herramientas de pentesting y genera reportes automáticos.</p>
+            <a href="#" class="btn">Ver en GitHub</a>
+        </div>
+
+        <div class="script-card automatizacion">
+            <h2>📂 Limpieza Segura de Logs</h2>
+            <p>Elimina rastros de actividad para prácticas seguras en laboratorios.</p>
+            <a href="#" class="btn">Ver en GitHub</a>
         </div>
 
     </section>
 
+    <footer>
+        <p>© 2025 BLH4ck3r | Portafolio de Ciberseguridad</p>
+    </footer>
+
     <script>
-        function toggleSection(sectionId) {
-            var section = document.getElementById(sectionId);
-            section.style.display = section.style.display === "none" ? "block" : "none";
+        function filterScripts(category) {
+            const cards = document.querySelectorAll('.script-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         }
     </script>
-
 </body>
 </html>
+
